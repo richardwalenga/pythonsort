@@ -19,8 +19,8 @@ class MergeSorter(BaseSorter):
         first_count, second_count = len(first), len(second)
         self.sort(first)
         self.sort(second)
+        first_index, second_index = 0, 0
         for i in range(count):
-            first_index, second_index = 0, 0
             can_take_first, can_take_second = first_index < first_count, second_index < second_count
             if can_take_first and (not can_take_second or first[first_index] <= second[second_index]):
                 nums[i] = first[first_index]

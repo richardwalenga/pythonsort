@@ -145,8 +145,8 @@ class Heap:
         # arbitrary but requires no extra processing time other than
         # what it takes to let it settle into its new position
         taken = self.storage[HeapStorage.ROOT_INDEX]
-        self.__size -= 1
         self.storage[HeapStorage.ROOT_INDEX] = self.storage[self.__size]
+        self.__size -= 1
         if self.__size > 1:
             HeapNode(self, HeapStorage.ROOT_INDEX).heapify_down()
         return taken
